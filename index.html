@@ -191,6 +191,11 @@
       padding-left: 16px;
       position: relative;
     }
+    .project-col .tech-note {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      line-height: 1.7;
+    }
     .project-col ul li::before {
       content: "";
       position: absolute;
@@ -200,21 +205,6 @@
       height: 5px;
       border-radius: 50%;
       background: #3b82f6;
-    }
-    .project-tags {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      margin-top: 18px;
-    }
-    .project-tags span {
-      font-size: 0.7rem;
-      font-weight: 500;
-      padding: 4px 12px;
-      border-radius: 999px;
-      background: #111827;
-      color: #94a3b8;
-      border: 1px solid #1e293b;
     }
     .project-actions {
       display: flex;
@@ -243,26 +233,6 @@
       border: 1px solid #1e293b;
     }
     .project-actions .code:hover { border-color: #334155; color: #e2e8f0; }
-
-    /* Architecture */
-    .arch {
-      margin-top: 20px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      flex-wrap: wrap;
-      font-size: 0.85rem;
-      color: #64748b;
-    }
-    .arch-step {
-      background: #111827;
-      border: 1px solid #1e293b;
-      padding: 6px 14px;
-      border-radius: 6px;
-      font-weight: 500;
-      color: #94a3b8;
-    }
-    .arch-arrow { color: #3b82f6; font-weight: 600; }
 
     /* Footer */
     footer {
@@ -348,45 +318,28 @@
         <div class="problem">
           E-commerce prices fluctuate constantly. Manually tracking multiple
           products across different ASINs is impractical. This system automates
-          the process — scraping daily, detecting changes, and visualizing
+          the process, scraping daily, detecting changes, and visualizing
           trends in a single dashboard.
         </div>
         <div class="project-grid">
           <div class="project-col">
             <h4>Features</h4>
             <ul>
-              <li>Automated daily scraping via scheduled jobs</li>
-              <li>Multi-product comparison with price overlay chart</li>
-              <li>Intelligent badges (Best Price, Top Rated, Most Reviews)</li>
-              <li>Historical price tracking with snapshot storage</li>
-              <li>CSV export for offline analysis</li>
+              <li>Automated daily tracking</li>
+              <li>Multi-product comparison</li>
+              <li>Historical price visualization</li>
+              <li>CSV export</li>
+              <li>Smart pricing indicators</li>
             </ul>
           </div>
           <div class="project-col">
-            <h4>Technical Challenges</h4>
-            <ul>
-              <li>Handling inconsistent HTML structures across products</li>
-              <li>Rate limiting and retry logic for reliable scraping</li>
-              <li>Data normalization across different currencies and formats</li>
-              <li>Chart performance with growing historical datasets</li>
-            </ul>
+            <h4>Technical Notes</h4>
+            <p class="tech-note">
+              Designed around reliable scraping workflows, structured historical
+              storage and responsive dashboard visualization for continuously
+              changing product data.
+            </p>
           </div>
-        </div>
-        <div class="arch">
-          <span class="arch-step">Scraper</span>
-          <span class="arch-arrow">→</span>
-          <span class="arch-step">Parser</span>
-          <span class="arch-arrow">→</span>
-          <span class="arch-step">Database</span>
-          <span class="arch-arrow">→</span>
-          <span class="arch-step">API</span>
-          <span class="arch-arrow">→</span>
-          <span class="arch-step">Dashboard</span>
-        </div>
-        <div class="project-tags">
-          <span>Python</span><span>FastAPI</span><span>Selenium</span>
-          <span>PostgreSQL</span><span>Docker</span><span>Chart.js</span>
-          <span>GitHub Actions</span>
         </div>
         <div class="project-actions">
           <a class="demo" href="https://amazon-monitor-eosin.vercel.app" target="_blank">Live Demo →</a>
@@ -411,38 +364,21 @@
           <div class="project-col">
             <h4>Features</h4>
             <ul>
-              <li>Daily automated keyword position scraping</li>
-              <li>Color-coded rank badges (top 3, top 10, outside)</li>
-              <li>Interactive rank history chart with time range selection</li>
-              <li>Trend indicators for position improvement or decline</li>
+              <li>Automated keyword tracking</li>
+              <li>Historical ranking visualization</li>
+              <li>Position change indicators</li>
+              <li>Interactive trend analysis</li>
               <li>CSV export for reporting</li>
             </ul>
           </div>
           <div class="project-col">
-            <h4>Technical Challenges</h4>
-            <ul>
-              <li>Handling dynamic search result structures</li>
-              <li>Parsing inconsistent result formats across queries</li>
-              <li>Managing rate limits for automated search requests</li>
-              <li>Rendering large position datasets efficiently</li>
-            </ul>
+            <h4>Technical Notes</h4>
+            <p class="tech-note">
+              Built to handle dynamic search result structures, automated query
+              workflows and efficient visualization of continuously changing
+              ranking data.
+            </p>
           </div>
-        </div>
-        <div class="arch">
-          <span class="arch-step">Scheduler</span>
-          <span class="arch-arrow">→</span>
-          <span class="arch-step">Scraper</span>
-          <span class="arch-arrow">→</span>
-          <span class="arch-step">Parser</span>
-          <span class="arch-arrow">→</span>
-          <span class="arch-step">DB</span>
-          <span class="arch-arrow">→</span>
-          <span class="arch-step">Dashboard</span>
-        </div>
-        <div class="project-tags">
-          <span>Python</span><span>Playwright</span><span>FastAPI</span>
-          <span>PostgreSQL</span><span>Docker</span><span>Chart.js</span>
-          <span>GitHub Actions</span>
         </div>
         <div class="project-actions">
           <a class="demo" href="https://serp-tracker-one.vercel.app" target="_blank">Live Demo →</a>
@@ -456,7 +392,7 @@
       <img class="project-image" src="trends.png" alt="Trends Scout" />
       <div class="project-body">
         <h3>Trends Scout</h3>
-        <p class="subtitle">Reddit trend intelligence — community engagement tracking</p>
+        <p class="subtitle">Community trend monitoring dashboard designed to track engagement patterns, top-performing posts and activity across online communities</p>
         <div class="problem">
           Understanding what content gains traction in online communities is
           valuable for marketing and product research. Manually browsing
@@ -467,38 +403,21 @@
           <div class="project-col">
             <h4>Features</h4>
             <ul>
-              <li>Multi-subreddit daily content scraping</li>
-              <li>Engagement analysis (upvotes, comments, upvote ratio)</li>
-              <li>Community selector with instant switching</li>
-              <li>Top post cards with upvote percentage bars</li>
-              <li>CSV export per community</li>
+              <li>Automated subreddit monitoring</li>
+              <li>Engagement and activity tracking</li>
+              <li>Community-based analytics</li>
+              <li>Top post visualization</li>
+              <li>CSV export support</li>
             </ul>
           </div>
           <div class="project-col">
-            <h4>Technical Challenges</h4>
-            <ul>
-              <li>Rate limiting across multiple subreddit requests</li>
-              <li>Handling Reddit API response variations</li>
-              <li>Normalizing post data with missing fields</li>
-              <li>Efficient data aggregation for engagement charts</li>
-            </ul>
+            <h4>Technical Notes</h4>
+            <p class="tech-note">
+              Built around automated data collection, engagement aggregation and
+              responsive visualization workflows for continuously changing
+              community activity.
+            </p>
           </div>
-        </div>
-        <div class="arch">
-          <span class="arch-step">Scheduler</span>
-          <span class="arch-arrow">→</span>
-          <span class="arch-step">Scraper</span>
-          <span class="arch-arrow">→</span>
-          <span class="arch-step">Processor</span>
-          <span class="arch-arrow">→</span>
-          <span class="arch-step">DB</span>
-          <span class="arch-arrow">→</span>
-          <span class="arch-step">Dashboard</span>
-        </div>
-        <div class="project-tags">
-          <span>Python</span><span>Selenium</span><span>FastAPI</span>
-          <span>PostgreSQL</span><span>Redis</span><span>Docker</span>
-          <span>Chart.js</span><span>GitHub Actions</span>
         </div>
         <div class="project-actions">
           <a class="demo" href="https://trends-scout-gilt.vercel.app" target="_blank">Live Demo →</a>
