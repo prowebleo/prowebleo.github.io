@@ -3,165 +3,238 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio — Automated Dashboards</title>
+  <title>Autonomous Data Pipelines — Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Inter', -apple-system, sans-serif;
-      background: #f8fafc;
-      color: #1e293b;
+      background: #0a0a0f;
+      color: #e2e8f0;
       line-height: 1.6;
     }
     .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
 
     header {
       text-align: center;
-      padding: 60px 0 40px;
+      padding: 70px 0 30px;
     }
-    header h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; }
-    header p { color: #64748b; margin-top: 8px; font-size: 1.05rem; }
-    header .links { margin-top: 16px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    header h1 { font-size: 2.2rem; font-weight: 700; letter-spacing: -0.03em; color: #f1f5f9; }
+    header .subtitle {
+      color: #94a3b8;
+      margin-top: 10px;
+      font-size: 1.05rem;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+    header .disclaimer {
+      color: #64748b;
+      margin-top: 14px;
+      font-size: 0.85rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+      font-style: italic;
+    }
+    header .links { margin-top: 20px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
     header .links a {
-      color: #3b82f6;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #94a3b8;
       text-decoration: none;
       font-size: 0.9rem;
       font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: 1px solid #1e293b;
+      transition: .2s;
     }
-    header .links a:hover { text-decoration: underline; }
+    header .links a:hover {
+      color: #f1f5f9;
+      border-color: #334155;
+      background: #111827;
+    }
 
-    .projects { padding: 20px 0 60px; display: flex; flex-direction: column; gap: 32px; }
+    .projects { padding: 40px 0 60px; display: flex; flex-direction: column; gap: 32px; }
 
     .card {
-      background: #fff;
+      background: #0f1117;
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
-      border: 1px solid #e2e8f0;
+      border: 1px solid #1e293b;
       display: flex;
       flex-direction: column;
+      transition: border-color .2s;
     }
+    .card:hover { border-color: #334155; }
+
     .card-preview {
-      height: 220px;
+      height: 240px;
+      overflow: hidden;
+      background: #0a0a0f;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #94a3b8;
-      font-size: 0.9rem;
     }
-    .card-preview.dark { background: #0f172a; }
-    .card-preview.blue { background: #eff6ff; }
-    .card-preview.white { background: #f8fafc; border-bottom: 1px solid #e2e8f0; }
+    .card-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      opacity: 0.9;
+      transition: opacity .3s;
+    }
+    .card:hover .card-preview img { opacity: 1; }
 
-    .card-body { padding: 24px; display: flex; flex-direction: column; gap: 12px; }
-    .card-body h2 { font-size: 1.2rem; font-weight: 600; }
-    .card-body p { color: #475569; font-size: 0.9rem; line-height: 1.65; }
+    .card-body { padding: 28px; display: flex; flex-direction: column; gap: 14px; }
+    .card-body h2 { font-size: 1.2rem; font-weight: 600; color: #f1f5f9; }
+    .card-body p { color: #94a3b8; font-size: 0.9rem; line-height: 1.7; }
     .card-body .tags { display: flex; gap: 6px; flex-wrap: wrap; }
     .card-body .tags span {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 500;
-      padding: 2px 10px;
+      padding: 3px 10px;
       border-radius: 999px;
-      background: #f1f5f9;
-      color: #475569;
+      background: #1e293b;
+      color: #94a3b8;
+      letter-spacing: 0.01em;
     }
-    .card-body .actions { display: flex; gap: 10px; margin-top: 4px; }
+    .card-body .actions { display: flex; gap: 10px; margin-top: 2px; }
     .card-body .actions a {
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      gap: 5px;
       font-size: 0.85rem;
       font-weight: 600;
-      padding: 8px 16px;
+      padding: 9px 18px;
       border-radius: 8px;
       text-decoration: none;
       transition: .15s;
     }
     .card-body .actions .demo {
-      background: #1e293b;
+      background: #3b82f6;
       color: #fff;
     }
-    .card-body .actions .demo:hover { background: #0f172a; }
+    .card-body .actions .demo:hover { background: #2563eb; }
     .card-body .actions .code {
-      background: #f1f5f9;
-      color: #1e293b;
+      background: #1e293b;
+      color: #94a3b8;
     }
-    .card-body .actions .code:hover { background: #e2e8f0; }
+    .card-body .actions .code:hover { background: #334155; color: #f1f5f9; }
 
     footer {
       text-align: center;
       padding: 40px 0;
       font-size: 0.85rem;
-      color: #94a3b8;
-      border-top: 1px solid #e2e8f0;
+      color: #475569;
+      border-top: 1px solid #1e293b;
     }
 
     @media (max-width: 600px) {
-      header h1 { font-size: 1.5rem; }
-      .card-preview { height: 160px; }
+      header h1 { font-size: 1.6rem; }
+      header .subtitle { font-size: 0.95rem; }
+      .card-preview { height: 180px; }
+      .card-body { padding: 20px; }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>Automated Data Dashboards</h1>
-      <p>Three portfolio projects — real-time scraping, historical tracking, and data visualization</p>
+      <h1>Autonomous Data Pipelines</h1>
+      <p class="subtitle">
+        Three automated dashboards that scrape, store, and visualize real data daily —
+        built as a technology showcase. The same architecture adapts to any source:
+        e-commerce prices, search rankings, social media trends, financial data, and more.
+      </p>
+      <p class="disclaimer">
+        These are working prototypes — real data, live dashboards, fully automated.
+        Each project runs independently on its own schedule and can be adapted to
+        any data source or industry.
+      </p>
       <div class="links">
-        <a href="https://github.com/prowebleo" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/prowebleo/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/prowebleo" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          GitHub
+        </a>
+        <a href="#" onclick="return false" style="opacity:0.5;cursor:not-allowed" title="Coming soon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
       </div>
     </header>
 
     <div class="projects">
 
       <div class="card">
-        <div class="card-preview dark" style="overflow:hidden">
-          <img src="https://github.com/prowebleo/amazon-monitor/raw/main/screenshot.png" alt="Amazon Price Monitor dashboard screenshot" style="width:100%;height:100%;object-fit:cover;object-position:top" />
+        <div class="card-preview">
+          <img src="https://github.com/prowebleo/amazon-monitor/raw/master/screenshot.png" alt="Amazon Price Monitor dashboard" />
         </div>
         <div class="card-body">
           <h2>Amazon Price Monitor</h2>
-          <p>Tracks GPU prices from Amazon daily. Multi-product comparison chart, price history overlay, smart badges for best value picks, and CSV export.</p>
+          <p>
+            Tracks GPU prices from Amazon across multiple ASINs simultaneously.
+            Automatically identifies the best-value option per scan with smart badges
+            (Best Price, Top Rated, Most Reviews). Multi-series price history overlay
+            lets you compare price trends at a glance. Built for competitive pricing
+            intelligence and restock alerts.
+          </p>
           <div class="tags">
             <span>Next.js</span><span>Turso</span><span>Recharts</span><span>GitHub Actions</span>
           </div>
           <div class="actions">
             <a class="demo" href="https://amazon-monitor-eosin.vercel.app" target="_blank">Live Demo →</a>
-            <a class="code" href="https://github.com/prowebleo/amazon-monitor" target="_blank">Source</a>
+            <a class="code" href="https://github.com/prowebleo/amazon-monitor" target="_blank">Source Code</a>
           </div>
         </div>
       </div>
 
       <div class="card">
-        <div class="card-preview blue" style="overflow:hidden">
-          <img src="https://github.com/prowebleo/serp-tracker/raw/main/screenshot.png" alt="SERP Tracker dashboard screenshot" style="width:100%;height:100%;object-fit:cover;object-position:top" />
+        <div class="card-preview">
+          <img src="https://github.com/prowebleo/serp-tracker/raw/master/screenshot.png" alt="SERP Rank Tracker dashboard" />
         </div>
         <div class="card-body">
           <h2>SERP Rank Tracker</h2>
-          <p>Monitors Google Search positions for target keywords. Color-coded position badges (green ≤3, amber ≤10, red &gt;10), rank trend chart with Brush, CSV export.</p>
+          <p>
+            Monitors Google Search positions for any keyword set. Color-coded position
+            badges (green ≤3, amber ≤10, red &gt;10) give instant rank visibility. Area
+            chart with interactive Brush lets you explore ranking history across any
+            time range. Ideal for SEO monitoring, competitor tracking, and content
+            performance analysis.
+          </p>
           <div class="tags">
             <span>Next.js</span><span>Turso</span><span>Recharts</span><span>GitHub Actions</span>
           </div>
           <div class="actions">
             <a class="demo" href="https://serp-tracker-one.vercel.app" target="_blank">Live Demo →</a>
-            <a class="code" href="https://github.com/prowebleo/serp-tracker" target="_blank">Source</a>
+            <a class="code" href="https://github.com/prowebleo/serp-tracker" target="_blank">Source Code</a>
           </div>
         </div>
       </div>
 
       <div class="card">
-        <div class="card-preview white" style="overflow:hidden">
-          <img src="https://github.com/prowebleo/trends-scout/raw/main/screenshot.png" alt="Trends Scout dashboard screenshot" style="width:100%;height:100%;object-fit:cover;object-position:top" />
+        <div class="card-preview">
+          <img src="https://github.com/prowebleo/trends-scout/raw/master/screenshot.png" alt="Trends Scout dashboard" />
         </div>
         <div class="card-body">
           <h2>Trends Scout</h2>
-          <p>Reddit trend intelligence — scrapes wallstreetbets, cryptocurrency, and python daily. Engagement bar charts, upvote ratio progress bars, subreddit selector, CSV export.</p>
+          <p>
+            Reddit trend intelligence — scrapes top posts from any subreddit daily.
+            Engagement bar charts track upvotes vs comments over time, while upvote
+            ratio progress bars surface quality content at a glance. Subreddit selector
+            lets you switch between communities instantly. Built for social listening
+            and community trend analysis.
+          </p>
           <div class="tags">
             <span>Next.js</span><span>Turso</span><span>Recharts</span><span>GitHub Actions</span>
           </div>
           <div class="actions">
             <a class="demo" href="https://trends-scout-gilt.vercel.app" target="_blank">Live Demo →</a>
-            <a class="code" href="https://github.com/prowebleo/trends-scout" target="_blank">Source</a>
+            <a class="code" href="https://github.com/prowebleo/trends-scout" target="_blank">Source Code</a>
           </div>
         </div>
       </div>
