@@ -28,17 +28,9 @@
       margin-left: auto;
       margin-right: auto;
       line-height: 1.7;
+      text-align: justify;
     }
-    header .disclaimer {
-      color: #64748b;
-      margin-top: 14px;
-      font-size: 0.85rem;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.6;
-      font-style: italic;
-    }
+    .card-body p { text-align: justify; }
     header .links { margin-top: 20px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
     header .links a {
       display: inline-flex;
@@ -128,10 +120,19 @@
 
     footer {
       text-align: center;
-      padding: 40px 0;
+      padding: 40px 0 30px;
       font-size: 0.85rem;
       color: #475569;
       border-top: 1px solid #1e293b;
+    }
+    footer .disclaimer {
+      color: #64748b;
+      font-size: 0.82rem;
+      max-width: 600px;
+      margin: 0 auto 20px;
+      line-height: 1.6;
+      font-style: italic;
+      text-align: center;
     }
 
     @media (max-width: 600px) {
@@ -150,11 +151,6 @@
         Three automated dashboards that scrape, store, and visualize real data daily —
         built as a technology showcase. The same architecture adapts to any source:
         e-commerce prices, search rankings, social media trends, financial data, and more.
-      </p>
-      <p class="disclaimer">
-        These are working prototypes — real data, live dashboards, fully automated.
-        Each project runs independently on its own schedule and can be adapted to
-        any data source or industry.
       </p>
       <div class="links">
         <a href="https://github.com/prowebleo" target="_blank">
@@ -242,6 +238,11 @@
     </div>
 
     <footer>
+      <p class="disclaimer">
+        These are working prototypes — real data, live dashboards, fully automated.
+        Each project runs independently on its own schedule and can be adapted to
+        any data source or industry.
+      </p>
       Built with Next.js, Turso, Recharts, and GitHub Actions
     </footer>
   </div>
