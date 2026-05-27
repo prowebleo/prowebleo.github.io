@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leo Cardenas — Automation & Data Systems</title>
+  <title>Leo Caicedo — Automation & Data Systems</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -48,20 +48,7 @@
       gap: 40px;
     }
     .hero-content { max-width: 640px; }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: #94a3b8;
-      background: #111827;
-      border: 1px solid #1e293b;
-      padding: 6px 14px;
-      border-radius: 999px;
-      margin-bottom: 20px;
-    }
-    .hero-badge span { color: #22c55e; }
+
     .hero h1 {
       font-size: 3rem;
       font-weight: 800;
@@ -152,6 +139,8 @@
     .project:first-of-type { margin-top: 28px; }
     .project-image {
       width: 100%;
+      max-height: 400px;
+      object-fit: cover;
       display: block;
       border-bottom: 1px solid #1e293b;
     }
@@ -322,19 +311,14 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-badge">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        Available for work <span>·</span> Automation & Data Systems
-      </div>
       <h1>
         Builds automated<br />
         <span>data pipelines</span> &amp;<br />
         analytics dashboards
       </h1>
       <p>
-        I design and deploy systems that scrape, process, store, and visualize
-        data automatically. From e-commerce monitoring to social intelligence —
-        the same architecture applies to any data source.
+        Building automated systems for data collection, processing and
+        interactive visualization.
       </p>
       <div class="hero-actions">
         <a class="primary" href="#projects">View Projects →</a>
@@ -342,33 +326,7 @@
       </div>
     </div>
     <div class="hero-preview">
-      <img src="amazon.png" alt="Dashboard preview — price monitoring" />
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section>
-    <div class="section-label">Technologies</div>
-    <h2 class="section-title">Tools &amp; Stack</h2>
-    <p class="section-desc">
-      Technologies I work with to build automated data systems — from scraping
-      and processing to storage and visualization.
-    </p>
-    <div class="skills-grid">
-      <span class="skill-tag">Python</span>
-      <span class="skill-tag">FastAPI</span>
-      <span class="skill-tag">PostgreSQL</span>
-      <span class="skill-tag">Selenium</span>
-      <span class="skill-tag">Playwright</span>
-      <span class="skill-tag">Pandas</span>
-      <span class="skill-tag">Docker</span>
-      <span class="skill-tag">Redis</span>
-      <span class="skill-tag">JavaScript</span>
-      <span class="skill-tag">Chart.js</span>
-      <span class="skill-tag">REST APIs</span>
-      <span class="skill-tag">GitHub Actions</span>
-      <span class="skill-tag">Vercel</span>
-      <span class="skill-tag">Recharts</span>
+      <img src="3tools.png" alt="Dashboard preview — price monitoring" />
     </div>
   </section>
 
@@ -377,8 +335,8 @@
     <div class="section-label">Projects</div>
     <h2 class="section-title">Automated Dashboards</h2>
     <p class="section-desc">
-      Three working prototypes that demonstrate the full pipeline —
-      scraping, storage, processing, and real-time visualization.
+      Three real-world prototypes showcasing automated data collection,
+      processing and interactive visualization.
     </p>
 
     <!-- Project 1 -->
@@ -550,6 +508,32 @@
     </div>
 
   </section>
+
+  <!-- Skills -->
+  <section>
+    <div class="section-label">Technologies</div>
+    <h2 class="section-title">Tools &amp; Stack</h2>
+    <p class="section-desc">
+      Technologies I work with to build automated data systems — from scraping
+      and processing to storage and visualization.
+    </p>
+    <div class="skills-grid">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">FastAPI</span>
+      <span class="skill-tag">PostgreSQL</span>
+      <span class="skill-tag">Selenium</span>
+      <span class="skill-tag">Playwright</span>
+      <span class="skill-tag">Pandas</span>
+      <span class="skill-tag">Docker</span>
+      <span class="skill-tag">Redis</span>
+      <span class="skill-tag">JavaScript</span>
+      <span class="skill-tag">Chart.js</span>
+      <span class="skill-tag">REST APIs</span>
+      <span class="skill-tag">GitHub Actions</span>
+      <span class="skill-tag">Vercel</span>
+      <span class="skill-tag">Recharts</span>
+    </div>
+  </section>
 </div>
 
 <footer>
@@ -557,7 +541,7 @@
     <a href="https://github.com/prowebleo" target="_blank">GitHub</a>
     <a href="#" onclick="return false" style="opacity:0.5">LinkedIn</a>
   </div>
-  <p>© 2026 Leo Cardenas — Automation &amp; Data Systems</p>
+  <p>© 2026 Leo Caicedo — Automation &amp; Data Systems</p>
   <p class="disclaimer">
     These are working prototypes with live data, automated pipelines, and
     public source code. Each project can be adapted to any data source or
