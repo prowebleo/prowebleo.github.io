@@ -225,10 +225,12 @@
     }
     .project-actions .code:hover { border-color: #334155; color: #e2e8f0; }
 
+    .screenshot-wrap {
+      text-align: center;
+    }
     .project-screenshot {
       width: 60%;
-      display: block;
-      margin: 0 auto;
+      display: inline-block;
       border-bottom: 1px solid #1e293b;
     }
 
@@ -293,23 +295,6 @@
     </div>
   </section>
 
-  <section>
-    <div class="section-label">Technologies</div>
-    <h2 class="section-title">Tools &amp; Stack</h2>
-    <p class="section-desc">
-      A practical stack focused on automation, data workflows and visualization.
-    </p>
-    <div class="skills-grid">
-      <span class="skill-tag">Python</span>
-      <span class="skill-tag">FastAPI</span>
-      <span class="skill-tag">PostgreSQL</span>
-      <span class="skill-tag">Selenium</span>
-      <span class="skill-tag">Pandas</span>
-      <span class="skill-tag">JavaScript</span>
-      <span class="skill-tag">Chart.js</span>
-    </div>
-  </section>
-
   <section id="projects">
     <div class="section-label">Projects</div>
     <h2 class="section-title">Automated Dashboards</h2>
@@ -319,7 +304,7 @@
     </p>
 
     <div class="project">
-      <img class="project-screenshot" src="amazon.png" alt="Price Monitor dashboard screenshot" />
+      <div class="screenshot-wrap"><img class="project-screenshot" src="amazon.png" alt="Price Monitor dashboard screenshot" /></div>
       <div class="project-body">
         <h3>Price Monitor</h3>
         <p class="subtitle">Real-time price monitoring dashboard for tracking GPU listings, price changes and historical trends automatically.</p>
@@ -351,7 +336,7 @@
     </div>
 
     <div class="project">
-      <img class="project-screenshot" src="serp.png" alt="Rank Tracker dashboard screenshot" />
+      <div class="screenshot-wrap"><img class="project-screenshot" src="serp.png" alt="Rank Tracker dashboard screenshot" /></div>
       <div class="project-body">
         <h3>Rank Tracker</h3>
         <p class="subtitle">Automated search ranking dashboard designed to monitor keyword positions, detect ranking changes and visualize search performance over time.</p>
@@ -383,7 +368,7 @@
     </div>
 
     <div class="project">
-      <img class="project-screenshot" src="trends.png" alt="Trends Scout dashboard screenshot" />
+      <div class="screenshot-wrap"><img class="project-screenshot" src="trends.png" alt="Trends Scout dashboard screenshot" /></div>
       <div class="project-body">
         <h3>Trends Scout</h3>
         <p class="subtitle">Community trend monitoring dashboard designed to track engagement patterns, top-performing posts and activity across online communities.</p>
@@ -412,6 +397,24 @@
           <a class="code" href="https://github.com/prowebleo/trends-scout" target="_blank" rel="noopener noreferrer">Source Code</a>
         </div>
       </div>
+    </div>
+  </section>
+</div>
+
+  <section>
+    <div class="section-label">Technologies</div>
+    <h2 class="section-title">Tools &amp; Stack</h2>
+    <p class="section-desc">
+      A practical stack focused on automation, data workflows and visualization.
+    </p>
+    <div class="skills-grid">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">FastAPI</span>
+      <span class="skill-tag">PostgreSQL</span>
+      <span class="skill-tag">Selenium</span>
+      <span class="skill-tag">Pandas</span>
+      <span class="skill-tag">JavaScript</span>
+      <span class="skill-tag">Chart.js</span>
     </div>
   </section>
 </div>
