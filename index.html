@@ -106,19 +106,6 @@
     }
     .hero-actions .secondary:hover { border-color: #334155; background: #1a1f2e; }
 
-    .hero-preview {
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid #1e293b;
-      background: #0a0a0f;
-      max-width: 100%;
-    }
-    .hero-preview img {
-      width: 100%;
-      display: block;
-      opacity: 0.85;
-    }
-
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -164,7 +151,7 @@
       font-size: 0.9rem;
       margin-top: 4px;
     }
-    .project .problem {
+    .project .tech-note {
       margin-top: 16px;
       padding: 14px 18px;
       background: #0a0a0f;
@@ -210,21 +197,6 @@
       border-radius: 50%;
       background: #3b82f6;
     }
-    .project-tags {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      margin-top: 18px;
-    }
-    .project-tags span {
-      font-size: 0.7rem;
-      font-weight: 500;
-      padding: 4px 12px;
-      border-radius: 999px;
-      background: #111827;
-      color: #94a3b8;
-      border: 1px solid #1e293b;
-    }
     .project-actions {
       display: flex;
       gap: 10px;
@@ -253,24 +225,11 @@
     }
     .project-actions .code:hover { border-color: #334155; color: #e2e8f0; }
 
-    .arch {
-      margin-top: 20px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      flex-wrap: wrap;
-      font-size: 0.85rem;
-      color: #64748b;
+    .project-screenshot {
+      width: 100%;
+      display: block;
+      border-bottom: 1px solid #1e293b;
     }
-    .arch-step {
-      background: #111827;
-      border: 1px solid #1e293b;
-      padding: 6px 14px;
-      border-radius: 6px;
-      font-weight: 500;
-      color: #94a3b8;
-    }
-    .arch-arrow { color: #3b82f6; font-weight: 600; }
 
     footer {
       text-align: center;
@@ -363,14 +322,15 @@
     </p>
 
     <div class="project">
+      <img class="project-screenshot" src="amazon.png" alt="Price Monitor dashboard screenshot" />
       <div class="project-body">
         <h3>Price Monitor</h3>
         <p class="subtitle">Real-time price monitoring dashboard for tracking GPU listings, price changes and historical trends automatically.</p>
-        <div class="problem">
-          Designed around reliable scraping workflows, structured historical
-          storage and responsive dashboard visualization for continuously
-          changing product data.
-        </div>
+        <p class="tech-note">
+          The system architecture is designed around reliable scraping workflows
+          that feed into structured historical storage, enabling responsive
+          dashboard visualization for continuously changing product data.
+        </p>
         <div class="project-grid">
           <div class="project-col">
             <h4>Features</h4>
@@ -382,31 +342,6 @@
               <li>Smart pricing indicators</li>
             </ul>
           </div>
-          <div class="project-col">
-            <h4>Technical Notes</h4>
-            <ul>
-              <li>Designed around reliable scraping workflows</li>
-              <li>Structured historical storage</li>
-              <li>Responsive dashboard visualization</li>
-              <li>Continuously changing product data</li>
-            </ul>
-          </div>
-        </div>
-        <div class="arch">
-          <span class="arch-step">Scraper</span>
-          <span class="arch-arrow">→</span>
-          <span class="arch-step">Parser</span>
-          <span class="arch-arrow">→</span>
-          <span class="arch-step">Database</span>
-          <span class="arch-arrow">→</span>
-          <span class="arch-step">API</span>
-          <span class="arch-arrow">→</span>
-          <span class="arch-step">Dashboard</span>
-        </div>
-        <div class="project-tags">
-          <span>Python</span><span>FastAPI</span><span>Selenium</span>
-          <span>PostgreSQL</span><span>Chart.js</span>
-          <span>GitHub Actions</span>
         </div>
         <div class="project-actions">
           <a class="demo" href="https://amazon-monitor-eosin.vercel.app" target="_blank" rel="noopener noreferrer">Live Demo →</a>
@@ -416,14 +351,15 @@
     </div>
 
     <div class="project">
+      <img class="project-screenshot" src="serp.png" alt="Rank Tracker dashboard screenshot" />
       <div class="project-body">
         <h3>Rank Tracker</h3>
         <p class="subtitle">Automated search ranking dashboard designed to monitor keyword positions, detect ranking changes and visualize search performance over time.</p>
-        <div class="problem">
-          Built to handle dynamic search result structures, automated query
-          workflows and efficient visualization of continuously changing
-          ranking data.
-        </div>
+        <p class="tech-note">
+          Built to handle dynamic search result structures through automated
+          query workflows, providing efficient visualization of continuously
+          changing ranking data.
+        </p>
         <div class="project-grid">
           <div class="project-col">
             <h4>Features</h4>
@@ -435,31 +371,6 @@
               <li>CSV export for reporting</li>
             </ul>
           </div>
-          <div class="project-col">
-            <h4>Technical Notes</h4>
-            <ul>
-              <li>Dynamic search result structures</li>
-              <li>Automated query workflows</li>
-              <li>Efficient visualization of ranking data</li>
-              <li>Continuously changing data</li>
-            </ul>
-          </div>
-        </div>
-        <div class="arch">
-          <span class="arch-step">Scheduler</span>
-          <span class="arch-arrow">→</span>
-          <span class="arch-step">Scraper</span>
-          <span class="arch-arrow">→</span>
-          <span class="arch-step">Parser</span>
-          <span class="arch-arrow">→</span>
-          <span class="arch-step">DB</span>
-          <span class="arch-arrow">→</span>
-          <span class="arch-step">Dashboard</span>
-        </div>
-        <div class="project-tags">
-          <span>Python</span><span>FastAPI</span>
-          <span>PostgreSQL</span><span>Chart.js</span>
-          <span>GitHub Actions</span>
         </div>
         <div class="project-actions">
           <a class="demo" href="https://serp-tracker-one.vercel.app" target="_blank" rel="noopener noreferrer">Live Demo →</a>
@@ -469,14 +380,15 @@
     </div>
 
     <div class="project">
+      <img class="project-screenshot" src="trends.png" alt="Trends Scout dashboard screenshot" />
       <div class="project-body">
         <h3>Trends Scout</h3>
         <p class="subtitle">Community trend monitoring dashboard designed to track engagement patterns, top-performing posts and activity across online communities.</p>
-        <div class="problem">
-          Built around automated data collection, engagement aggregation and
-          responsive visualization workflows for continuously changing
-          community activity.
-        </div>
+        <p class="tech-note">
+          The platform relies on automated data collection and engagement
+          aggregation pipelines, feeding into responsive visualization workflows
+          for continuously changing community activity.
+        </p>
         <div class="project-grid">
           <div class="project-col">
             <h4>Features</h4>
@@ -488,30 +400,6 @@
               <li>CSV export support</li>
             </ul>
           </div>
-          <div class="project-col">
-            <h4>Technical Notes</h4>
-            <ul>
-              <li>Automated data collection</li>
-              <li>Engagement aggregation</li>
-              <li>Responsive visualization workflows</li>
-              <li>Continuously changing community activity</li>
-            </ul>
-          </div>
-        </div>
-        <div class="arch">
-          <span class="arch-step">Scheduler</span>
-          <span class="arch-arrow">→</span>
-          <span class="arch-step">Scraper</span>
-          <span class="arch-arrow">→</span>
-          <span class="arch-step">Processor</span>
-          <span class="arch-arrow">→</span>
-          <span class="arch-step">DB</span>
-          <span class="arch-arrow">→</span>
-          <span class="arch-step">Dashboard</span>
-        </div>
-        <div class="project-tags">
-          <span>Python</span><span>Selenium</span><span>FastAPI</span>
-          <span>PostgreSQL</span><span>Chart.js</span><span>GitHub Actions</span>
         </div>
         <div class="project-actions">
           <a class="demo" href="https://trends-scout-gilt.vercel.app" target="_blank" rel="noopener noreferrer">Live Demo →</a>
