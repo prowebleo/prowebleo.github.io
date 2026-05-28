@@ -227,10 +227,13 @@
 
     .screenshot-wrap {
       text-align: center;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
     }
     .project-screenshot {
       width: 60%;
-      display: inline-block;
+      clip-path: inset(0 0 20% 0);
       border-bottom: 1px solid #1e293b;
     }
 
@@ -399,7 +402,6 @@
       </div>
     </div>
   </section>
-</div>
 
   <section>
     <div class="section-label">Technologies</div>
